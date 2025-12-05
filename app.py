@@ -245,7 +245,7 @@ with tab3:
         st.plotly_chart(fig_corr, use_container_width=True)
 
     st.divider()
-    st.subheader("Веса модели (Feature Importance)")
+    st.subheader("Веса модели")
     
     try:
         feat_imp = pd.DataFrame({
@@ -259,4 +259,5 @@ with tab3:
         fig_imp.update_layout(yaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig_imp, use_container_width=True)
     except Exception:
+
         st.warning("Не удалось извлечь важность признаков из модели.")
